@@ -6,7 +6,7 @@ def GetMainDLL():
         bassdll = ctypes.cdll.LoadLibrary(dllpath)
         return bassdll
     except:
-        raise RuntimeError("Not Founded bass.dll or not installed Visual C++ Runtime All-in-One and DirectX... \nPlease Restart PC after Installing This!!!")
+        raise RuntimeError("Not Founded bass.dll or not installed Visual C++ Runtime All-in-One and DirectX... \nPlease Restart PC after Installing Visual C++ Runtime All-in-One and DirectX!!!")
 def BASS_INIT(device : ctypes.c_int, freq : ctypes.c_int32, flags : ctypes.c_int32, win : ctypes.c_int, dsguid : ctypes.c_int) -> ctypes.c_bool:
     GetMainDLL().BASS_Init.restype = ctypes.c_bool
     GetMainDLL().BASS_Init.argtypes = [ctypes.c_int, ctypes.c_int32, ctypes.c_int32, ctypes.c_int, ctypes.c_int]
